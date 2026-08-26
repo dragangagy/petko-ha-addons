@@ -1,0 +1,22 @@
+name: Petko PostgREST
+version: "1.0.2"
+slug: petko_postgrest
+description: Supabase-compatible REST API for Petko Word Quest
+url: https://github.com/dragangagy/petko-word-quest
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+init: false
+ports:
+  3000/tcp: 8000
+ports_description:
+  3000/tcp: PostgREST API (Petko)
+image: postgrest/postgrest:v12.2.3
+environment:
+  PGRST_DB_URI: postgresql://postgres:homeassistant@db21ed7f-postgres-latest:5432/postgres
+  PGRST_DB_SCHEMAS: public
+  PGRST_DB_ANON_ROLE: anon
+  PGRST_JWT_SECRET: petko-local-jwt-secret-at-least-32-characters
+  PGRST_SERVER_PORT: "3000"
