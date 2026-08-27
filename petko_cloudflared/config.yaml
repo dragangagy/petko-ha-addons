@@ -1,0 +1,17 @@
+name: Petko Cloudflare Tunnel
+version: "1.0.0"
+slug: petko_cloudflared
+description: Cloudflare Tunnel for public HTTPS access to Petko PostgREST APIs
+url: https://github.com/dragangagy/petko-ha-addons
+arch:
+  - amd64
+startup: application
+boot: auto
+init: false
+host_network: true
+options:
+  token: ""
+schema:
+  token: str
+build:
+  amd64: Dockerfile
