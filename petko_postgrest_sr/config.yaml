@@ -1,5 +1,5 @@
 name: Petko PostgREST (SR)
-version: "1.0.0"
+version: "1.0.1"
 slug: petko_postgrest_sr
 description: Supabase-compatible REST API for Petko (srpska verzija)
 url: https://github.com/dragangagy/petko-ha-addons
@@ -11,7 +11,7 @@ init: false
 ports:
   3001/tcp: 3001
 ports_description:
-  3001/tcp: PostgREST API — Petko SR (db petko_sr)
+  3001/tcp: PostgREST API for Petko SR (db petko_sr)
 image: postgrest/postgrest:v12.2.3
 environment:
   PGRST_DB_URI: postgresql://authenticator:homeassistant@db21ed7f-postgres-latest:5432/petko_sr?sslmode=disable

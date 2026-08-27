@@ -1,5 +1,5 @@
 name: Petko PostgREST (EN)
-version: "1.3.0"
+version: "1.3.1"
 slug: petko_postgrest
 description: Supabase-compatible REST API for Petko Word Quest (English)
 url: https://github.com/dragangagy/petko-ha-addons
@@ -11,7 +11,7 @@ init: false
 ports:
   3000/tcp: 3000
 ports_description:
-  3000/tcp: PostgREST API — Petko Word Quest (EN, db petko_en)
+  3000/tcp: PostgREST API for Petko Word Quest EN (db petko_en)
 image: postgrest/postgrest:v12.2.3
 environment:
   PGRST_DB_URI: postgresql://authenticator:homeassistant@db21ed7f-postgres-latest:5432/petko_en?sslmode=disable
