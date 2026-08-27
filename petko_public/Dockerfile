@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.0.0
-FROM ngrok/ngrok:latest AS ngrok
+FROM ngrok/ngrok:3-alpine AS ngrok
 FROM ${BUILD_FROM}
 RUN apk add --no-cache nginx
 COPY --from=ngrok /bin/ngrok /usr/local/bin/ngrok

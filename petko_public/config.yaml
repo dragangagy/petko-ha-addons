@@ -1,5 +1,5 @@
 name: Petko Public API
-version: "1.0.0"
+version: "1.0.1"
 slug: petko_public
 description: Free public HTTPS for Petko games via ngrok (no domain needed)
 url: https://github.com/dragangagy/petko-ha-addons
