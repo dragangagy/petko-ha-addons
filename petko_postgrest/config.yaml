@@ -1,5 +1,5 @@
 name: Petko PostgREST (EN)
-version: "1.3.4"
+version: "1.3.5"
 slug: petko_postgrest
 description: Supabase-compatible REST API for Petko Word Quest (English)
 url: https://github.com/dragangagy/petko-ha-addons

@@ -12,6 +12,8 @@ export PGRST_DB_ANON_ROLE="anon"
 export PGRST_JWT_SECRET="${JWT_SECRET}"
 export PGRST_SERVER_PORT="3001"
 export PGRST_SERVER_HOST="0.0.0.0"
+export PGRST_SERVER_CORS_ALLOWED_ORIGINS="*"
+export PGRST_DB_MAX_ROWS="10000"
 
 bashio::log.info "Starting PostgREST SR -> ${PG_HOST}/${DB_NAME}:3001"
 exec /usr/local/bin/postgrest
