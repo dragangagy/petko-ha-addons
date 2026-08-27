@@ -1,0 +1,16 @@
+name: Petko DB Admin
+version: "1.0.0"
+slug: petko_admin
+description: Web SQL browser for Petko databases (Adminer) on your LAN
+url: https://github.com/dragangagy/petko-ha-addons
+arch:
+  - amd64
+startup: application
+boot: auto
+init: false
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: Adminer web UI for PostgreSQL
+build:
+  amd64: Dockerfile
