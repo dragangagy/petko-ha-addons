@@ -14,7 +14,11 @@ declare
   weekend_start date := belgrade_today - ((dow + 1) % 7);
 begin
   if to_regprocedure('public.record_witch_hunt_result(date)') is not null then
-    perform public.record_witch_hunt_result(weekend_start);
+    begin
+      perform public.record_witch_hunt_result(weekend_start);
+    exception when others then
+      null;
+    end;
   end if;
 
   delete from public.challenges
