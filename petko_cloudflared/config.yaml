@@ -1,5 +1,5 @@
 name: Petko Cloudflare Tunnel
-version: "1.0.0"
+version: "1.0.1"
 slug: petko_cloudflared
 description: Cloudflare Tunnel for public HTTPS access to Petko PostgREST APIs
 url: https://github.com/dragangagy/petko-ha-addons

@@ -9,5 +9,5 @@ if [[ -z "${TOKEN}" ]]; then
   exit 1
 fi
 
-bashio::log.info "Starting Cloudflare Tunnel (host network -> 127.0.0.1:3000 / :3001)"
-exec cloudflared tunnel run --token "${TOKEN}"
+bashio::log.info "Starting Cloudflare Tunnel (host network -> 127.0.0.1:3000 / :3001, protocol http2)"
+exec cloudflared tunnel run --protocol http2 --token "${TOKEN}"
