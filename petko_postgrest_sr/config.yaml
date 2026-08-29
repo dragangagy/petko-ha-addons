@@ -1,5 +1,5 @@
 name: Petko PostgREST (SR)
-version: "1.0.5"
+version: "1.0.6"
 slug: petko_postgrest_sr
 description: Supabase-compatible REST API for Petko (srpska verzija)
 url: https://github.com/dragangagy/petko-ha-addons

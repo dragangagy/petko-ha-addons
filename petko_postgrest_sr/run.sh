@@ -10,10 +10,11 @@ export PGRST_DB_URI="postgresql://postgres:${PG_PASS}@${PG_HOST}:5432/${DB_NAME}
 export PGRST_DB_SCHEMAS="public"
 export PGRST_DB_ANON_ROLE="anon"
 export PGRST_JWT_SECRET="${JWT_SECRET}"
-export PGRST_SERVER_PORT="3001"
-export PGRST_SERVER_HOST="0.0.0.0"
+export PGRST_SERVER_PORT="13001"
+export PGRST_SERVER_HOST="127.0.0.1"
 export PGRST_SERVER_CORS_ALLOWED_ORIGINS="*"
 export PGRST_DB_MAX_ROWS="10000"
 
-bashio::log.info "Starting PostgREST SR -> ${PG_HOST}/${DB_NAME}:3001"
-exec /usr/local/bin/postgrest
+bashio::log.info "Starting PostgREST SR -> ${PG_HOST}/${DB_NAME}:13001 (nginx CORS proxy on :3001)"
+/usr/local/bin/postgrest &
+exec nginx -c /etc/nginx/nginx.conf -g 'daemon off;'
