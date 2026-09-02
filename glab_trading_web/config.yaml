@@ -1,0 +1,16 @@
+name: G-Lab Trading Web
+version: "1.0.0"
+slug: glab_trading_web
+description: Paper trading dashboard (G-Lab) — static web UI
+url: https://github.com/dragangagy/petko-ha-addons
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+init: false
+host_network: true
+ports:
+  3010/tcp: 3010
+ports_description:
+  3010/tcp: G-Lab Trading Web UI

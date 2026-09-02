@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G-Lab Trading</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">G</span>
+      <div>
+        <strong>G-Lab Trading</strong>
+        <small>Paper account · demo</small>
+      </div>
+    </div>
+    <div class="symbol-bar">
+      <label>
+        Simbol
+        <select id="symbolSelect">
+          <option value="XAUUSD" selected>XAUUSD</option>
+          <option value="EURUSD">EURUSD</option>
+          <option value="GBPUSD">GBPUSD</option>
+        </select>
+      </label>
+      <label>
+        Timeframe
+        <select id="timeframeSelect">
+          <option value="1">1m</option>
+          <option value="5" selected>5m</option>
+          <option value="15">15m</option>
+          <option value="60">1H</option>
+          <option value="240">4H</option>
+          <option value="D">1D</option>
+        </select>
+      </label>
+      <div class="quote">
+        <span>Bid <b id="bidPrice">—</b></span>
+        <span>Ask <b id="askPrice">—</b></span>
+        <span>Spread <b id="spreadPrice">—</b></span>
+      </div>
+    </div>
+    <div class="account-mini">
+      <span>Equity <b id="headerEquity">—</b></span>
+      <span class="pill" id="connectionPill">Live sim</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="chart-panel">
+      <div id="chart"></div>
+    </section>
+
+    <aside class="trade-panel">
+      <h2>Order</h2>
+      <div class="side-toggle">
+        <button type="button" class="btn-buy active" data-side="BUY">BUY</button>
+        <button type="button" class="btn-sell" data-side="SELL">SELL</button>
+      </div>
+      <label>Lot <input id="lotInput" type="number" min="0.01" step="0.01" value="0.01" /></label>
+      <label>Stop Loss <input id="slInput" type="number" step="0.01" placeholder="opciono" /></label>
+      <label>Take Profit <input id="tpInput" type="number" step="0.01" placeholder="opciono" /></label>
+      <button type="button" id="sendOrderBtn" class="btn-primary">Pošalji market nalog</button>
+      <p class="hint">Paper trading — nema pravog novca. SL/TP se proveravaju na simuliranoj ceni.</p>
+    </aside>
+  </main>
+
+  <section class="account-panel">
+    <div class="account-card">
+      <h3>Account Manager</h3>
+      <div class="metrics">
+        <div><span>Balance</span><strong id="balanceVal">—</strong></div>
+        <div><span>Equity</span><strong id="equityVal">—</strong></div>
+        <div><span>Margin</span><strong id="marginVal">—</strong></div>
+        <div><span>Free margin</span><strong id="freeMarginVal">—</strong></div>
+        <div><span>Unrealized P/L</span><strong id="unrealizedVal" class="pnl">—</strong></div>
+        <div><span>Realized P/L</span><strong id="realizedVal" class="pnl">—</strong></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <h3>Open Positions <span id="openCount">0</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Symbol</th><th>Type</th><th>Vol</th><th>Entry</th><th>Current</th><th>SL</th><th>TP</th><th>P/L</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="openBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="table-card">
+      <h3>Closed Trades</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th><th>Symbol</th><th>Type</th><th>Vol</th><th>Entry</th><th>Exit</th><th>P/L</th><th>Reason</th>
+            </tr>
+          </thead>
+          <tbody id="closedBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span id="statusLine">Učitavam…</span>
+    <button type="button" id="resetBtn" class="link-btn">Reset demo naloga</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
